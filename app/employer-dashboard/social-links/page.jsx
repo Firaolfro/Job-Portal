@@ -23,14 +23,14 @@ import { PiBagBold, PiUsersLight } from "react-icons/pi";
 // CORRECTED IMPORTS START HERE:
 // Uncomment and ensure correct component names and paths.
 
-import AllCompanies from "./AllCompanies"; // Ensure this file exists and exports a component named AllCompanies
-import EmployerProfile from "./EmployerProfile"; // Ensure this file exists and exports a component named EmployerProfile
-import MyJobs from "./MyJobs"; // Ensure this file exists and exports a component named MyJobs
+// import AllCompanies from "./AllCompanies"; // Ensure this file exists and exports a component named AllCompanies
+// import EmployerProfile from "./EmployerProfile"; // Ensure this file exists and exports a component named EmployerProfile
+// import MyJobs from "./MyJobs"; // Ensure this file exists and exports a component named MyJobs
 import PlansBilling from "./PlansBilling"; // Ensure this file exists and exports a component named PlansBilling
 import SavedCandidate from "./SavedCandidate"; // Ensure this file exists and exports a component named SavedCandidate
 
 // Corrected import for "Post a Job". Assuming postjob-pricing.jsx exports a component named PostJob.
-import PostJob from "./postjob-pricing"; // Ensure this file exists and exports a component named PostJob
+// import PostJob from "./postjob-pricing"; // Ensure this file exists and exports a component named PostJob
 
 import SettingsComponent from "./SettingsComponent"; // Renamed to avoid conflict with lucide-react 'Settings' icon. Ensure this file exists and exports a component named SettingsComponent
 // CORRECTED IMPORTS END HERE
