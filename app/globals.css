@@ -1,5 +1,9 @@
 @import "tailwindcss";
+/* globals.css */
+/* @config "./tailwind.config.js"; This line tells Tailwind where your config is */
+@config "../tailwind.config.js"; /* This line tells Tailwind where your config is */
 
+/* ... your other CSS code ... */
 :root {
   --background: #ffffff;
   --foreground: #171717;

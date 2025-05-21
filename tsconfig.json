@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/candidate-dashboard/sidebar.jsx",
+    "app/candidate-dashboard/layout.jsx",
+    "app/candidate-dashboard/page.jsx",
+    "app/candidate-dashboard/favorite-jobs/page.jsx",
+    "app/candidate-dashboard/overview/page.jsx",
+    "app/candidate-dashboard/settings/profile/page.jsx",
+    "app/candidate-dashboard/settings/social-links/page.jsx",
+    "app/candidate-dashboard/settings/header.jsx",
+    "app/candidate-dashboard/settings/page.jsx",
+    "app/candidate-dashboard/settings/layout.jsx",
+    "app/candidate-dashboard/settings/personal/page.jsx",
+    "app/account-setup/layout.js",
+    "app/account-setup/page.jsx",
+    "app/account-setup/settings/layout.jsx",
+    "app/account-setup/settings/page.jsx",
+    "app/account-setup/company-info/page.jsx",
+    "app/account-setup/founding-info/page.jsx",
+    "app/account-setup/account-settings/page.jsx"
+  ],
+  "exclude": ["node_modules"]
+}

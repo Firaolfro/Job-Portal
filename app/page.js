@@ -1,23 +1,23 @@
-import FeaturedJobs from "./components/FeaturedJobs";
-import Footer from "./components/Footer";
+import FeaturedJobs from "./components/home/FeaturedJobs";
 // import Header from "./components/Header";
-import Hero from "./components/Hero";
-import MostPopularVacancies from "./components/MostPopularVacancies";
+import Hero from "./components/home/Hero";
+import MostPopularVacancies from "./components/home/MostPopularVacancies";
 
-import PopularCategories from "./components/PopularCategories";
+import PopularCategories from "./components/home/PopularCategories";
 
-import StatisticsLayout from "./components/StatisticsLayout";
+import StatisticsLayout from "./components/home/StatisticsLayout";
 
-import CallToAction from "./components/CallToAction";
-import Testimonials from "./components/ClientsTestimonial";
-import HowItWorks from "./components/HowItWorks";
-import TopCompanies from "./components/TopCompanies";
+import CallToAction from "./components/home/CallToAction";
+import Testimonials from "./components/home/ClientsTestimonial";
+import HowItWorks from "./components/home/HowItWorks";
+import TopCompanies from "./components/home/TopCompanies";
 
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import ScrollToTopButton from "./components/home/ScrollToTopButton";
+import Header from "./components/layouts/Header";
 export default function HomePage() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
 
       <ScrollToTopButton />
       <Hero />
@@ -31,7 +31,7 @@ export default function HomePage() {
       <Testimonials />
       <CallToAction />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
