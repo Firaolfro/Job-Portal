@@ -130,7 +130,7 @@ export default function JobApplicationsPage() {
     if (jobId) {
       fetchApplications();
     }
-  }, [jobId]);
+  }, [jobId, mockApplications]);
 
   const filteredApplications = applications.filter((app) => {
     if (filterStatus === "All") return true;

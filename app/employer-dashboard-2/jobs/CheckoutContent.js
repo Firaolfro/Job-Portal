@@ -2,6 +2,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation"; // You might still need this for other reasons, but not for changing main dashboard content.
 
 import { useState } from "react";
@@ -149,7 +150,7 @@ export default function CheckoutContent({
                       <div>
                         <div className="flex items-center gap-2">
                           {/* Assuming a small card logo can be here */}
-                          <img
+                          <Image
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/800px-Mastercard-logo.svg.png"
                             alt="Mastercard"
                             className="h-4"
