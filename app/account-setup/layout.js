@@ -1,6 +1,7 @@
 "use client";
 
 import { AtSign, Building2, Globe, User } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -55,7 +56,7 @@ export default function AccountSetupLayout({ children }) {
           </div> */}
 
           <Link href="/dashboard" className="flex items-center gap-2">
-            <img
+            <Image
               src="/logo.png" // ← Replace this with your actual logo path or URL
               alt="MyJob Logo"
               className="w-20 h-20 object-contain"

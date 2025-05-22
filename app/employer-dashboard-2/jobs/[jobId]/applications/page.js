@@ -4,7 +4,97 @@ import { Download, Edit2, Trash2 } from "lucide-react"; // Icons for actions
 import { useParams, useRouter, useSearchParams } from "next/navigation"; // Import hooks
 import { useEffect, useState } from "react";
 import { PiUsersLight } from "react-icons/pi";
+// Mock data for applications - replace with your actual API call
+const mockApplications = {
+  job1: [
+    {
+      id: "app1",
+      name: "Ronald Richards",
+      position: "UI/UX Designer",
+      experience: "7 Years Experience",
+      education: "Master Degree",
+      appliedDate: "Jan 23, 2022",
+      isShortlisted: false,
+      cvDownloadUrl: "/mock-cv/ronald-richards-cv.pdf",
+    },
+    {
+      id: "app2",
+      name: "Darrell Steward",
+      position: "UI/UX Designer",
+      experience: "7 Years Experience",
+      education: "Intermediate Degree",
+      appliedDate: "Jan 23, 2022",
+      isShortlisted: true,
+      cvDownloadUrl: "/mock-cv/darrell-steward-cv.pdf",
+    },
+    {
+      id: "app3",
+      name: "Theresa Webb",
+      position: "Product Designer",
+      experience: "7 Years Experience",
+      education: "High School Degree",
+      appliedDate: "Jan 23, 2022",
+      isShortlisted: false,
+      cvDownloadUrl: "/mock-cv/theresa-webb-cv.pdf",
+    },
+    {
+      id: "app4",
 
+      name: "Jenny Wilson",
+      position: "UI Designer",
+      experience: "7 Years Experience",
+      education: "Bachelor Degree",
+      appliedDate: "Jan 23, 2022",
+      isShortlisted: true,
+      cvDownloadUrl: "/mock-cv/jenny-wilson-cv.pdf",
+    },
+    {
+      id: "app5",
+      name: "Devon Lane",
+      position: "User Experience Designer",
+      experience: "7 Years Experience",
+      education: "Master Degree",
+      appliedDate: "Jan 23, 2022",
+      isShortlisted: false,
+      cvDownloadUrl: "/mock-cv/devon-lane-cv.pdf",
+    },
+    {
+      id: "app6",
+      name: "Kathryn Murphy",
+      position: "UI/UX Designer",
+      experience: "5 Years Experience",
+      education: "Master Degree",
+      appliedDate: "Jan 20, 2022",
+      isShortlisted: false,
+      cvDownloadUrl: "/mock-cv/kathryn-murphy-cv.pdf",
+    },
+  ],
+  // Add mock data for other job IDs if needed
+  job2: [
+    // Add applications for Senior UX Designer (jobId: "job2") here
+    {
+      id: "app7",
+      name: "Alice Smith",
+      position: "Senior UX Designer",
+      experience: "10 Years Experience",
+      education: "PhD",
+      appliedDate: "Feb 15, 2022",
+      isShortlisted: true,
+      cvDownloadUrl: "/mock-cv/alice-smith-cv.pdf",
+    },
+    {
+      id: "app8",
+      name: "Bob Johnson",
+      position: "Senior UX Designer",
+      experience: "8 Years Experience",
+      education: "Master Degree",
+      appliedDate: "Feb 20, 2022",
+      isShortlisted: false,
+      cvDownloadUrl: "/mock-cv/bob-johnson-cv.pdf",
+    },
+    // ... more applications for job2
+  ],
+};
 export default function JobApplicationsPage() {
   const { jobId } = useParams(); // Get jobId from the route parameters
   const searchParams = useSearchParams(); // Hook to access query parameters
@@ -16,97 +106,6 @@ export default function JobApplicationsPage() {
   const [filterStatus, setFilterStatus] = useState("All"); // 'All' or 'Shortlisted'
   const [sortOrder, setSortOrder] = useState("Newest"); // 'Newest' or 'Oldest'
   const router = useRouter();
-  // Mock data for applications - replace with your actual API call
-  const mockApplications = {
-    job1: [
-      {
-        id: "app1",
-        name: "Ronald Richards",
-        position: "UI/UX Designer",
-        experience: "7 Years Experience",
-        education: "Master Degree",
-        appliedDate: "Jan 23, 2022",
-        isShortlisted: false,
-        cvDownloadUrl: "/mock-cv/ronald-richards-cv.pdf",
-      },
-      {
-        id: "app2",
-        name: "Darrell Steward",
-        position: "UI/UX Designer",
-        experience: "7 Years Experience",
-        education: "Intermediate Degree",
-        appliedDate: "Jan 23, 2022",
-        isShortlisted: true,
-        cvDownloadUrl: "/mock-cv/darrell-steward-cv.pdf",
-      },
-      {
-        id: "app3",
-        name: "Theresa Webb",
-        position: "Product Designer",
-        experience: "7 Years Experience",
-        education: "High School Degree",
-        appliedDate: "Jan 23, 2022",
-        isShortlisted: false,
-        cvDownloadUrl: "/mock-cv/theresa-webb-cv.pdf",
-      },
-      {
-        id: "app4",
-
-        name: "Jenny Wilson",
-        position: "UI Designer",
-        experience: "7 Years Experience",
-        education: "Bachelor Degree",
-        appliedDate: "Jan 23, 2022",
-        isShortlisted: true,
-        cvDownloadUrl: "/mock-cv/jenny-wilson-cv.pdf",
-      },
-      {
-        id: "app5",
-        name: "Devon Lane",
-        position: "User Experience Designer",
-        experience: "7 Years Experience",
-        education: "Master Degree",
-        appliedDate: "Jan 23, 2022",
-        isShortlisted: false,
-        cvDownloadUrl: "/mock-cv/devon-lane-cv.pdf",
-      },
-      {
-        id: "app6",
-        name: "Kathryn Murphy",
-        position: "UI/UX Designer",
-        experience: "5 Years Experience",
-        education: "Master Degree",
-        appliedDate: "Jan 20, 2022",
-        isShortlisted: false,
-        cvDownloadUrl: "/mock-cv/kathryn-murphy-cv.pdf",
-      },
-    ],
-    // Add mock data for other job IDs if needed
-    job2: [
-      // Add applications for Senior UX Designer (jobId: "job2") here
-      {
-        id: "app7",
-        name: "Alice Smith",
-        position: "Senior UX Designer",
-        experience: "10 Years Experience",
-        education: "PhD",
-        appliedDate: "Feb 15, 2022",
-        isShortlisted: true,
-        cvDownloadUrl: "/mock-cv/alice-smith-cv.pdf",
-      },
-      {
-        id: "app8",
-        name: "Bob Johnson",
-        position: "Senior UX Designer",
-        experience: "8 Years Experience",
-        education: "Master Degree",
-        appliedDate: "Feb 20, 2022",
-        isShortlisted: false,
-        cvDownloadUrl: "/mock-cv/bob-johnson-cv.pdf",
-      },
-      // ... more applications for job2
-    ],
-  };
 
   useEffect(() => {
     const fetchApplications = async () => {
@@ -114,13 +113,10 @@ export default function JobApplicationsPage() {
 
       setError(null);
       try {
-        console.log("Fetching applications for jobId:", jobId); // <--- THIS LOG
-        console.log("Keys in mockApplications:", Object.keys(mockApplications)); // <--- THIS LOG
         const data = mockApplications[jobId] || [];
         console.log("Data fetched:", data); // <--- THIS LOG
         setApplications(data);
       } catch (err) {
-        console.error("Failed to fetch applications:", err);
         setError("Failed to load applications. Please try again later.");
       } finally {
         setLoading(false);
@@ -130,7 +126,7 @@ export default function JobApplicationsPage() {
     if (jobId) {
       fetchApplications();
     }
-  }, [jobId, mockApplications]);
+  }, [jobId]);
 
   const filteredApplications = applications.filter((app) => {
     if (filterStatus === "All") return true;
@@ -149,12 +145,21 @@ export default function JobApplicationsPage() {
     }
   });
 
+  // const handleDownloadCv = (cvUrl) => {
+  //   if (cvUrl) {
+  //     window.open(cvUrl, "_blank");
+  //   } else {
+  //     alert("CV download URL not available.");
+  //   }
+  // };
+
   const handleDownloadCv = (cvUrl) => {
-    if (cvUrl) {
-      window.open(cvUrl, "_blank");
-    } else {
-      alert("CV download URL not available.");
-    }
+    const link = document.createElement("a");
+    link.href = cvUrl;
+    link.setAttribute("download", ""); // Optional: set filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleEditColumn = (applicantId) => {
