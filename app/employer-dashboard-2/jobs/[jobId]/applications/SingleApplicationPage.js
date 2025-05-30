@@ -26,7 +26,7 @@ import {
 import { HiArrowRight } from "react-icons/hi";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-const candidates = [
+const applications = [
   {
     name: "Esther Howard",
     title: "Website Designer (UI/UX)",
@@ -291,7 +291,7 @@ Marvin McKinney`,
   },
 ];
 
-const CandidateModal = ({ candidate, onClose }) => {
+const SingleApplicationModal = ({ candidate, onClose }) => {
   if (!candidate) return null;
 
   return (
@@ -507,7 +507,7 @@ const CandidateModal = ({ candidate, onClose }) => {
   );
 };
 
-export default function CandidatePage() {
+export default function SingleApplicationPage() {
   const [showLevel, setShowLevel] = useState(false);
   const [showExp, setShowExp] = useState(false);
   const [showEdu, setShowEdu] = useState(false);
@@ -668,7 +668,7 @@ export default function CandidatePage() {
 
       {/* Candidate List */}
       <div className="md:col-span-3 space-y-4">
-        {candidates.map((candidate, index) => (
+        {applications.map((candidate, index) => (
           <div
             key={index}
             className="flex flex-col md:flex-row md:items-center justify-between p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all"
@@ -717,7 +717,7 @@ export default function CandidatePage() {
 
       {/* Modal */}
       {showModal && (
-        <CandidateModal
+        <SingleApplicationModal
           candidate={selectedCandidate}
           onClose={() => setShowModal(false)}
         />

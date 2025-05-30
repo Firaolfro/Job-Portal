@@ -1,5 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation"; // ✅ Instead of "next/router"
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
@@ -65,9 +67,11 @@ const ResetPasswordPage = () => {
             <h2 className="text-center text-2xl font-bold text-gray-900">
               Reset Password
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Duis lectus interdum metus, ut consectetur ante commodo sed.
-              Suspendisse euismod viverra massa sit amet mollis.
+
+            <p className="text-gray-600 text-sm">
+              Secure your account by creating a new password.
+              <br />
+              Make sure it's strong and unique to protect your information.
             </p>
           </div>
           <form className="space-y-6" onSubmit={handleResetPassword}>
